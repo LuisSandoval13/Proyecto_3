@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hoja de Vida - Luis Sandoval</title>
+
+  <!-- META TAGS SEO -->
+  <meta name="description" content="Hoja de vida de Luis Bernardo Sandoval - Desarrollador Web.">
+  <meta name="keywords"
+    content="Desarrollador Web, HTML, CSS, JavaScript, Java, Spring Boot, MySQL, SENA, Luis Sandoval, Duitama, Boyacá">
+  <meta name="author" content="Luis Bernardo Sandoval">
+
+  <!-- OPEN GRAPH TAGS -->
+  <meta property="og:title" content="Hoja de Vida - Luis Sandoval">
+  <meta property="og:description"
+    content="Desarrollador Web con experiencia en tecnologías modernas y desarrollo backend con Java y Spring Boot.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://tucv-ejemplo.com">
+  <meta property="og:image" content="https://tucv-ejemplo.com/imagen-perfil.jpg">
+
+  <!-- FAVICON -->
+  <link rel="icon" href="" type="image/x-icon">
+
+  <!-- ESTILOS -->
+  <link rel="stylesheet" href="style.css">
+
+
+</head>
+
+<body>
+
+  <header>
+    <div class="top-bar">
+      <div class="logo">👤 Luis Bernardo Sandoval</div>
+      <nav class="nav-links">
+        <a href="index.html">Home</a> /
+        <a href="proyectos.html">Proyectos</a> /
+        <a href="articulos.html">Articulos</a> /
+        <a href="contacto.html">Contacto</a>
+      </nav>
+      <div class="theme-toggle">
+        <button id="theme-toggle" aria-label="Cambiar tema">
+          🌙
+        </button>
+      </div>
+    </div>
+
+
+
+    <div class="intro">
+      <h1>Desarrollador Web</h1>
+      <p>HTML y CSS con diseño responsive y estructura profesional</p>
+    </div>
+
+  </header>
+
+  <main>
+    <section class="info-grid">
+
+      <div class="proyectos">
+        <h2>Proyectos</h2>
+        <ul>
+          <li>Página Web Informativa</li>
+          <li>Sistema de Control de Personal</li>
+          <li>Gestor de Inventario</li>
+          <li>Portafolio HTML Básico</li>
+        </ul>
+      </div>
+
+      <div class="trabajos">
+        <h2>Experiencia Laboral</h2>
+        <p><strong>Servicio Nacional de Aprendizaje (SENA)</strong><br>
+          Desarrollador de Software<br>
+          2024 - Actualidad
+        </p>
+        <ul>
+          <li>Diseño e implementación de interfaces web interactivas.</li>
+          <li>Desarrollo de servicios backend con Java y Spring Boot.</li>
+          <li>Gestión de bases de datos con MySQL.</li>
+          <li>Uso de Git y GitHub para control de versiones y despliegue.</li>
+        </ul>
+
+        <p><strong>Proyectos Personales</strong><br>
+          Desarrollo de páginas informativas, sistemas de control de acceso e inventario.
+        </p>
+      </div>
+
+
+      <div class="educacion">
+        <h2>Educación</h2>
+
+        <p><strong>Tecnólogo en Análisis y Desarrollo de Software</strong><br>
+          SENA — 2024 - 2027
+        </p>
+
+        <p><strong>Técnico en Construcción</strong><br>
+          SENA — 2021 - 2023
+        </p>
+
+        <p><strong>Bachiller Académico con Énfasis en Educación</strong><br>
+          Normal Superior La Presentación — 2018
+        </p>
+
+        <h3>Cursos Relevantes</h3>
+        <ul>
+          <li>Programación Orientada a Objetos</li>
+          <li>Estructuras de Datos y Algoritmos</li>
+          <li>Desarrollo Web</li>
+          <li>Bases de Datos MySQL</li>
+        </ul>
+      </div>
+    </section>
+
+
+    <section class="reviews">
+      <h2>Testimonios</h2>
+      <div class="review-cards">
+        <div class="card">
+          <p>“Luis ha demostrado gran compromiso y dedicación en cada uno de sus proyectos.”</p>
+          <p><strong>Nombre del Instructor</strong><br>Instructor SENA</p>
+        </div>
+        <div class="card">
+          <p>“Muestra habilidades técnicas destacadas y gran capacidad para aprender nuevas tecnologías.”</p>
+          <p><strong>Nombre del Profesor</strong><br>Educador Técnico</p>
+        </div>
+        <div class="card">
+          <p>“Luis es un estudiante ejemplar que sobresale por su trabajo en equipo y responsabilidad.”</p>
+          <p><strong>Nombre del Tutor</strong><br>Tutor Académico</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Luis Bernardo Sandoval. Todos los derechos reservados.</p>
+  </footer>
+
+</body>
+
+</html>
+<script>
+  // ======== CAMBIO DE TEMA ========
+  const themeButton = document.getElementById("theme-toggle");
+
+  // Cargar tema guardado
+  const savedTheme = localStorage.getItem("theme") || "light";
+  if (savedTheme === "dark") {
+    document.body.classList.add("dark-theme");
+    themeButton.textContent = "☀️";
+  }
+
+  themeButton.addEventListener("click", () => {
+    document.body.classList.toggle("dark-theme");
+    const isDark = document.body.classList.contains("dark-theme");
+    themeButton.textContent = isDark ? "☀️" : "🌙";
+    localStorage.setItem("theme", isDark ? "dark" : "light");
+  });
+
+  // ======== ANIMACIÓN AL HACER SCROLL ========
+  const entries = document.querySelectorAll(".changelog-entry");
+  const observer = new IntersectionObserver(
+    (observed) => {
+      observed.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.1 }
+  );
+
+  entries.forEach((entry) => observer.observe(entry));
+
+</script>
+<style>
+  :root {
+    --azul: #1a73e8;
+    --rojo: #d93025;
+    --gris-claro: #f8f9fb;
+    --gris-borde: #dcdfe3;
+    --texto: #1c1c1c;
+    --blanco: #c3d1d3;
+  }
+
+  body {
+    font-family: 'Lora', serif;
+    margin: 0;
+    padding: 0;
+    color: var(--texto);
+    background-color: var(--gris-claro);
+    line-height: 1.7;
+  }
+
+
+  .theme-toggle {
+    text-align: right;
+    padding: 1.5rem;
+  }
+
+  #theme-toggle {
+    background-color: var(--color-primary);
+    color: white;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+
+  #theme-toggle:hover {
+    transform: scale(1.05);
+    background-color: #357abd;
+  }
+
+
+
+
+  header {
+    background-color: var(--blanco);
+    border-bottom: 3px solid var(--azul);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    padding-bottom: 0.5rem;
+  }
+
+
+  .top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem 2rem;
+    flex-wrap: wrap;
+  }
+
+  .logo {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 1.2rem;
+    color: var(--azul);
+  }
+
+  .nav-links a {
+    text-decoration: none;
+    color: var(--texto);
+    margin-left: 1rem;
+    font-weight: 500;
+    font-family: 'Poppins', sans-serif;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover {
+    color: var(--rojo);
+  }
+
+
+  .intro {
+    text-align: center;
+    padding: 2rem 1rem;
+    background-color: var(--blanco);
+    border-top: 2px solid var(--azul);
+  }
+
+  .intro h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2rem;
+    color: var(--azul);
+    margin-bottom: 0.3rem;
+  }
+
+  .intro p {
+    color: #444;
+    font-size: 1rem;
+    font-style: italic;
+  }
+
+
+  .info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    padding: 2rem;
+    background-color: var(--blanco);
+    border-top: 2px solid var(--azul);
+    border-bottom: 2px solid var(--azul);
+  }
+
+  .info-grid>div {
+    border: 1px solid var(--gris-borde);
+    padding: 1.2rem;
+    border-left: 4px solid var(--azul);
+    background-color: var(--blanco);
+    transition: transform 0.2s, border-color 0.2s;
+  }
+
+  .info-grid>div:hover {
+    transform: translateY(-3px);
+    border-color: var(--rojo);
+  }
+
+  .info-grid h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.25rem;
+    color: var(--azul);
+    margin-bottom: 0.5rem;
+    border-bottom: 1px solid var(--gris-borde);
+    padding-bottom: 0.3rem;
+  }
+
+  .info-grid ul {
+    list-style: disc;
+    margin: 0.5rem 0 0 1.2rem;
+    padding: 0;
+  }
+
+
+  .reviews {
+    text-align: center;
+    padding: 2.5rem 1rem;
+    background-color: var(--blanco);
+    border-top: 2px solid var(--azul);
+  }
+
+  .reviews h2 {
+    font-family: 'Poppins', sans-serif;
+    color: var(--azul);
+    margin-bottom: 1.5rem;
+  }
+
+  .review-cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .card {
+    border: 1px solid var(--gris-borde);
+    border-radius: 10px;
+    padding: 1.2rem;
+    width: 280px;
+    background-color: var(--gris-claro);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    transition: border 0.2s, transform 0.2s;
+  }
+
+  .card:hover {
+    border-color: var(--rojo);
+    transform: translateY(-3px);
+  }
+
+  .card h3 {
+    font-family: 'Poppins', sans-serif;
+    color: var(--azul);
+    margin-bottom: 0.4rem;
+  }
+
+
+  footer {
+    text-align: center;
+    padding: 1rem 0;
+    border-top: 3px solid var(--azul);
+    background-color: var(--blanco);
+    color: #555;
+    font-size: 0.9rem;
+  }
+
+  footer span {
+    color: var(--rojo);
+    font-weight: 500;
+  }
+
+  /*Tema*/
+
+  .changelog-entry {
+    position: relative;
+    width: 65%;
+    padding: 1.5rem 2rem;
+    background: var(--color-card);
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    margin: 1.5rem 0;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+
+
+
+  .changelog-entry.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .changelog-entry:nth-child(odd) {
+    left: -25%;
+  }
+
+  .changelog-entry:nth-child(even) {
+    left: 53%;
+  }
+
+  .changelog-date {
+    font-weight: bold;
+    color: var(--color-primary);
+    margin-bottom: 0.5rem;
+  }
+
+  .changelog-content h2 {
+    margin: 0 0 0.5rem;
+  }
+
+  body.dark-theme {
+    --color-bg: #121212;
+    --color-text: #f5f5f5;
+    --color-primary: #bb86fc;
+    --color-card: #1e1e1e;
+    --color-border: #333;
+  }
+
+  /*  RESPONSIVE */
+
+  @media (max-width: 768px) {
+    .top-bar {
+      flex-direction: column;
+    }
+
+    .nav-links {
+      margin-top: 0.5rem;
+    }
+
+    .info-grid {
+      grid-template-columns: 1fr;
+      padding: 1.2rem;
+    }
+
+    .review-cards {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+
+  /* ======== TEMA OSCURO ======== */
+  body.dark-theme {
+    background-color: #1a1a1a;
+    color: #e0e0e0;
+  }
+
+  body.dark-theme header {
+    background-color: #2d2d2d;
+    color: #e0e0e0;
+  }
+
+  body.dark-theme .top-bar {
+    background-color: #2d2d2d;
+    border-bottom: 2px solid #444;
+  }
+
+  body.dark-theme nav a {
+    color: #b0b0b0;
+  }
+
+  body.dark-theme nav a:hover {
+    color: #fff;
+  }
+
+  body.dark-theme main {
+    background-color: #1a1a1a;
+  }
+
+  body.dark-theme article {
+    background-color: #2d2d2d;
+    color: #e0e0e0;
+    border: 1px solid #444;
+  }
+
+  body.dark-theme article:hover {
+    background-color: #363636;
+  }
+
+  body.dark-theme h1,
+  body.dark-theme h2 {
+    color: #ffffff;
+  }
+
+  body.dark-theme footer {
+    background-color: #2d2d2d;
+    color: #b0b0b0;
+    border-top: 2px solid #444;
+  }
+
+  body.dark-theme button#theme-toggle {
+    background-color: #363636;
+    color: #fff;
+  }
+
+  body.dark-theme button#theme-toggle:hover {
+    background-color: #444;
+  }
+</style>

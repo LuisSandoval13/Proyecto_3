@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Artículos - Luis Bernardo Sandoval</title>
+  <meta name="description" content="Artículos de Luis Bernardo Sandoval sobre desarrollo web.">
+  <meta name="keywords" content="HTML, Java, MySQL, desarrollo web">
+  <meta name="author" content="Luis Bernardo Sandoval">
+  <link rel="canonical" href="articulos.html">
+  <meta name="robots" content="index, follow">
+
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <header>
+    <div class="top-bar">
+      <div class="logo">👤 Luis Bernardo Sandoval
+      <h2>Articulos</h2>
+      </div>
+      <nav class="nav-links">
+        <a href="index.html">Inicio</a> /
+        <a href="proyectos.html">Proyectos</a> /
+        <a href="articulos.html">Articulos</a> /
+        <a href="contacto.html">Contacto</a>
+      </nav>
+      <div class="theme-toggle">
+        <button id="theme-toggle" aria-label="Cambiar tema">
+          🌙
+        </button>
+      </div>
+    </div>
+
+
+
+    <div class="intro">
+      <h1>Desarrollador Web</h1>
+      <p>HTML y CSS con diseño responsive y estructura profesional</p>
+    </div>
+
+  </header>
+
+  <main>
+  <section class="info-grid">
+    <div class="proyectos">
+      <article>
+        <h2>Introducción a HTML5</h2>
+        <p>Conceptos básicos para crear la estructura de una página web con HTML5.</p>
+      </article>
+
+      <article>
+        <h2>Java y MySQL con Spring Boot</h2>
+        <p>Cómo conectar una aplicación Java a una base de datos MySQL usando Spring Boot.</p>
+      </article>
+
+      <article>
+        <h2>Uso de Git y GitHub</h2>
+        <p>Consejos para manejar proyectos y versiones de código con Git y GitHub.</p>
+      </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 - Luis Bernardo Sandoval</p>
+  </footer>
+</body>
+
+</html>
+
+  <script>
+  // ======== CAMBIO DE TEMA ========
+  const themeButton = document.getElementById("theme-toggle");
+  
+  // Cargar tema guardado
+  const savedTheme = localStorage.getItem("theme") || "light";
+  if (savedTheme === "dark") {
+    document.body.classList.add("dark-theme");
+    themeButton.textContent = "☀️";
+  }
+  
+  themeButton.addEventListener("click", () => {
+    document.body.classList.toggle("dark-theme");
+    const isDark = document.body.classList.contains("dark-theme");
+    themeButton.textContent = isDark ? "☀️" : "🌙";
+    localStorage.setItem("theme", isDark ? "dark" : "light");
+  });
+
+  // ======== ANIMACIÓN AL HACER SCROLL ========
+  const entries = document.querySelectorAll(".changelog-entry");
+  const observer = new IntersectionObserver(
+    (observed) => {
+      observed.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.1 }
+  );
+
+  entries.forEach((entry) => observer.observe(entry));
+  
+</script>
+<style>
+
+
+/* ======== TEMA OSCURO ======== */
+body.dark-theme {
+  background-color: #1a1a1a;
+  color: #e0e0e0;
+}
+
+body.dark-theme header {
+  background-color: #2d2d2d;
+  color: #e0e0e0;
+}
+
+body.dark-theme .top-bar {
+  background-color: #2d2d2d;
+  border-bottom: 2px solid #444;
+}
+
+body.dark-theme nav a {
+  color: #b0b0b0;
+}
+
+body.dark-theme nav a:hover {
+  color: #fff;
+}
+
+body.dark-theme main {
+  background-color: #1a1a1a;
+}
+
+body.dark-theme article {
+  background-color: #2d2d2d;
+  color: #e0e0e0;
+  border: 1px solid #444;
+}
+
+body.dark-theme article:hover {
+  background-color: #363636;
+}
+
+body.dark-theme h1, 
+body.dark-theme h2 {
+  color: #ffffff;
+}
+
+body.dark-theme footer {
+  background-color: #2d2d2d;
+  color: #b0b0b0;
+  border-top: 2px solid #444;
+}
+
+body.dark-theme button#theme-toggle {
+  background-color: #363636;
+  color: #fff;
+}
+
+body.dark-theme button#theme-toggle:hover {
+  background-color: #444;
+}
+</style>
